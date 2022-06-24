@@ -14,12 +14,8 @@ switch (number) {
         console.log('You got 3!');
         
         break;
-    case 4:
-        console.log('You got 4!');
-        
-        break;
-
+    case 4:  //grouping multiple case
     default:
-        console.log('You got 5 or more.');
+        console.log('You got 4 or more.');
         break;
 }
