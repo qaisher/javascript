@@ -13,3 +13,4 @@ arr2.shift();
 console.log(arr2);
 arr2.unshift(5);
 console.log(arr2);
+console.log(arr1);
