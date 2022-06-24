@@ -21,8 +21,6 @@ function getUserRole(name, role){
             break;
     }
 
-    
-
 }
 
 console.log(getUserRole('qaisher', 'testprep'));

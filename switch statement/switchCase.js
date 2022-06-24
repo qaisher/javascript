@@ -23,4 +23,3 @@ switch (number) {
         console.log('You got 5 or more.');
         break;
 }
-let userInput = prompt('input a number between 0 and 10');
