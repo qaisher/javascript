@@ -1,5 +1,7 @@
 var arr1 = ['Delhi', 'Kashmir', 'UP', 'Haryana'];
 
+//pop and push
+
 console.log(arr1);
 console.log(`Length of array befor pop - ${arr1.length}`);
 arr1.pop();
@@ -7,6 +9,17 @@ console.log(`Length of array after pop - ${arr1.length}`);
 console.log(arr1);
 arr1.push('Himachal');
 console.log(arr1);
+
+//at -1
+
+console.log(arr1.at(-1));
+
+//searching index of an element
+
+console.log(arr1.indexOf('Delhi'));
+
+
+//shift and unshift
 
 var arr2 = new Array(3,5,6,1,6);
 console.log(arr2);
