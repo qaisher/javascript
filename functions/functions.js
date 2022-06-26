@@ -122,3 +122,35 @@ const squareOfNumber = function square(x){
 let squaredNum = squareOfNumber(7);
 console.log(squaredNum);
 
+
+
+//conditional function declarations are hoisted irrespective of the condition
+
+let num3 = Math.random()*10;
+if(num3 > 5){
+    function double(num3){
+    
+        console.log(`Double of ${num3} is ${num3*2}`);
+    }
+    double(num3);
+}
+else{
+    console.log("num3 smaller than or equal to 5");
+}
+
+
+
+//arrow function
+
+const calcAge = (currentYear, birthYear) => currentYear - birthYear; //single-line arrow function does not require return
+
+let age = calcAge(2022, 1994);
+console.log(`Age = ${age}`);
+
+
+const sumOfSquares = (a, b) => {
+    let squareSum = a*a + b*b;
+    return squareSum;
+}
+
+console.log(sumOfSquares(4,6));
