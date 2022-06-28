@@ -55,7 +55,7 @@ console.log(cities);
 
 //join
 
-let citiesJoined = cities.join();
+let citiesJoined = cities.join('-'); //string
 console.log(citiesJoined);
 
 
