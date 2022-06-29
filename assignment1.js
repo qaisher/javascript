@@ -47,10 +47,14 @@ console.log(factorialForLoop(6));
 //3. You are given an array A of size N. You need to print elements of A in alternate order (starting from index 0).
 
 function alternateElements(arr){
-    for(let i = 0; i<arr.length - 1;  i+2){
-        console.log()
+    for(let i = 0; i<(arr.length)/2;  i++){
+        console.log(arr[i]);
+        if(i<(arr.length-1)/2)
+            console.log(arr[arr.length - 1 -i]);
     }
 }
+
+alternateElements([3, 2, 5, 8, 9, 0]);
 
 
 
@@ -91,7 +95,7 @@ console.log(deleteDuplilcate(arr2));
 
 //6. Given a string “nitin”, check if it is palindrome or not.
 
-let str = "nitin";
+let input = "nitin";
 
 function checkPalindrome(str){
     let strReversed = '';
@@ -105,7 +109,7 @@ function checkPalindrome(str){
         console.log(`The given string is NOT palindrome.`);
 }
 
-checkPalindrome(str);
+checkPalindrome(input);
 
 
 
@@ -122,19 +126,20 @@ console.log(finalResult);
 //8. Given a string str containing only lower case alphabets, the task is to sort it in lexicographically-descending order.
 function arrange(str){
 
-    for(let j = str.length-1; j>=0; j--){
-        console.log(str[j]);
-        for(let i = j; i>=0; i--){
-            console.log(str[i])
-            /*if(str[i]>str[i-1]){
-                let temp = str[i];
-                str[i] = str[i-1];
-                str[i-1] = temp;
-                
-            }*/
+    let arr = str.split('');
+
+    console.log(arr);
+
+    for(let i = 0; i<arr.length; i++){
+        for(let j = 0; j<arr.length-i; j++){
+            if(arr[j]<arr[j+1]){
+                let temp = arr[j];
+                arr[j]=arr[j+1];
+                arr[j+1] = temp;
+            }
         }
     }
-
+    console.log(arr);
 
 }
 arrange('kaishar');
