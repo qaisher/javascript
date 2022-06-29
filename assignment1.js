@@ -2,12 +2,26 @@
 
 let num = Math.round(Math.random()*10);
 checkPrime(num);
+
 function checkPrime(num){
+
     if(num === 0){
         console.log(`Zero is not a prime number.`);
         return;
     }
+
+    if(num === 1){
+        console.log(`1 is not a prime number.`);
+        return;
+    }
+
+    if(num === 2){
+        console.log(`2 is a prime number.`);
+        return;
+    }
+
     for(let i = 2; i<num; i++){
+
         if(num%i === 0){
             console.log(`The number ${num} is not prime.`);
             return;
@@ -23,19 +37,24 @@ function checkPrime(num){
 
 //using for loop
 function factorialForLoop(num){
+
     let result = 1;
+
     for(let i = num; i > 1; i--){
         result *= i;
     }
+
     return result;
 }
 
 //using recursion
 function factorialRecursion(num){
+
     if(num>1){
     result = num*factorialRecursion(num-1);
     return result;
     }
+
     return 1;
 }
 
@@ -46,15 +65,33 @@ console.log(factorialForLoop(6));
 
 //3. You are given an array A of size N. You need to print elements of A in alternate order (starting from index 0).
 
+
 function alternateElements(arr){
-    for(let i = 0; i<(arr.length)/2;  i++){
-        console.log(arr[i]);
-        if(i<(arr.length-1)/2)
-            console.log(arr[arr.length - 1 -i]);
+    let alternateArr = [];
+
+    for(let i = 0; i<arr.length; i=i+2){
+        alternateArr.push(arr[i]);
     }
+
+    return alternateArr;
 }
 
-alternateElements([3, 2, 5, 8, 9, 0]);
+console.log(alternateElements([3, 2, 5, 8, 9, 0]));
+
+/*
+function alternateElements(arr){
+    for(let i = 0; i<(arr.length)/2;  i++){
+
+        console.log(arr[i]);
+
+        if(i<(arr.length-1)/2){
+        
+            console.log(arr[arr.length - 1 -i]);
+        }
+    }
+}
+*/
+
 
 
 
@@ -77,18 +114,23 @@ let arr2 = [2, 3, 3, 3, 4, 5, 6, 6, 7, 7, 7, 7, 7, 8, 9];
 
 function deleteDuplilcate(arr){
 
-    for(let i = 0; i<arr.length; i++){
+    for(let i = 0; i < arr.length; i++){
+
         if(arr[i] === arr[i+1]){
-            for(let j = i+1; j<arr.length;j++){
+
+            for(let j = i+1; j<arr.length; j++){
                 arr[j] = arr[j+1];
             }
+
             arr.length--;
             i--;
         }
     }
+
     return arr;
 
 }
+
 console.log(deleteDuplilcate(arr2));
 
 
@@ -102,6 +144,7 @@ function checkPalindrome(str){
     for(let i = str.length-1; i>=0; i--){
         strReversed += str[i];
     }
+
     if(!(str.localeCompare(strReversed))){
         console.log(`The given string is palindrome.`);
     }
@@ -117,8 +160,14 @@ checkPalindrome(input);
 
 let s = 'i.like.javascript.very.much';
 let stringArray = s.split('.');
-stringArray.reverse();
-let finalResult = stringArray.join('.');
+let reversed = [];
+
+for(let i = stringArray.length-1; i>=0; i--){
+    reversed.push(stringArray[i]);
+}
+
+//stringArray.reverse();
+let finalResult = reversed.join('.');
 console.log(finalResult);
 
 
@@ -131,15 +180,18 @@ function arrange(str){
     console.log(arr);
 
     for(let i = 0; i<arr.length; i++){
+
         for(let j = 0; j<arr.length-i; j++){
+
             if(arr[j]<arr[j+1]){
+                
                 let temp = arr[j];
-                arr[j]=arr[j+1];
+                arr[j] = arr[j+1];
                 arr[j+1] = temp;
             }
         }
     }
-    console.log(arr);
+    console.log(arr.join(''));
 
 }
 arrange('kaishar');
