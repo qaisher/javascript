@@ -75,6 +75,7 @@ person.fullName = 'abc xyz';
 console.log(person); //object is mutated
 let key = "likes birds";
 console.log(person[key]);
+
 delete person.fullName; //deleting a property
 console.log(person);
 
