@@ -17,6 +17,7 @@ function displayScoreBoard(arr){
         
         scoreBoard['Over' + over] = sum;
         totalScore += sum;
+        
     }
     scoreBoard['Total Score'] = totalScore;
 
