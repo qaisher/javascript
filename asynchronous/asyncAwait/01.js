@@ -2,11 +2,25 @@ const uno = () => {
     return `I'm One.`;
 };
 
+
+/*
 const dos = () => {
     setTimeout(() => {
         return `I'm Two.`;
     }, 5000);
+   
     
+};*/
+
+const dos = () => {
+
+    return new Promise((resolve, reject) => {
+        setTimeout( () => {
+            resolve(`I'm Two`);
+        }, 2000);
+        
+    });
+
 };
 
 const tres = () => {
@@ -14,11 +28,11 @@ const tres = () => {
 };
 
 
-const callMe = () => {
+const callMe = async () => {
     let valOne = uno();
     console.log(valOne);
 
-    let valTwo = dos();
+    let valTwo = await dos();
     console.log(valTwo);
 
     let valThree = tres();
