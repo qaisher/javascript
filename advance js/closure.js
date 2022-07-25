@@ -18,9 +18,10 @@ const myFuncGrand = function() {
         let b = 200;
         console.log(`We are inside parent func. ${b}.`);
 
-        return function (){
+        const child = function (){
             console.log(`${a} from grand and ${b} from parent.`);
         }
+        return child;
     }
 
     let z = myFuncParent();
@@ -32,11 +33,12 @@ const k = myFuncGrand();
 k();
 
 console.dir(k);
-
+/*
 (function(){
     const header = document.querySelector('h1');
     header.style.color = 'red';
     document.body.addEventListener('click', function(){
         header.style.color = 'blue';
     });
-})();
+})();8
+*/

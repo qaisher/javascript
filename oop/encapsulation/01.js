@@ -57,3 +57,20 @@ console.log(acc1);
 acc1.deposit(500).deposit(200).withdraw(150).requestLoan(10000);
 
 console.log(acc1.getMovements());
+
+
+
+
+if(prop !==  'tracks' && value !== ''){
+    records.id[prop] = value;
+  }
+  if(prop === 'tracks' && records.hasOwnProperty('tracks')){
+    records.id.arr = [];
+    records.id.arr.push(value);
+  }
+  if(prop === 'tracks' && value !== ''){
+    records.id.tracks.push(value);
+  }
+  if(value === ''){
+    delete records.id.prop;
+  }
